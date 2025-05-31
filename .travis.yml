@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t natnaelbelayneh/docker-react -f Dockerfile.dev .
+
+script:
+  -  docker run natnaelbelayneh/docker-react npm run test -- --coverage 
